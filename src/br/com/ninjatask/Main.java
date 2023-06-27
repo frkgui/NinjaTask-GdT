@@ -7,6 +7,8 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         System.out.println(">> Seja bem vindo ao NinjaTask");
+        byte selecaoMenu = 1;
+
 
         System.out.println("""
                 
@@ -20,6 +22,9 @@ public class Main {
                 """);
         System.out.print(">> Digite a opção desejada: ");
         byte opcaoSelecionada = Byte.parseByte(input.nextLine());
+
+        do{
+
 
         switch (opcaoSelecionada) {
             case 0 -> System.exit(0);
@@ -59,6 +64,21 @@ public class Main {
                 break;
             }
             default -> System.exit(0);
+
         }
+            System.out.println("""
+                
+                >> Opções disponíveis:
+                
+                >> (1) - Criar tarefa
+                >> (2) - Ver tarefa
+                >> (3) - Editar tarefa
+                >> (4) - Excluir tarefa
+                >> (0) - Sair
+                """);
+            System.out.print(">> Digite a opção desejada: ");
+            opcaoSelecionada = Byte.parseByte(input.nextLine());
+
+        }while(selecaoMenu!=0);
     }
 }

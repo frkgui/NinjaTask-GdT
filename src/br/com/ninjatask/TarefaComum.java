@@ -9,7 +9,7 @@ public class TarefaComum extends Tarefa{
         this.setNomeDaTarefa(nomeDaTarefa);
     }
 
-    int contadorTarefas = 0;
+    int contadorTarefas = 1;
 
     public void criarTarefa(String nomeDaTarefa, String descricaoDaTarefa, byte prioridadeDaTarefa){
         this.setNomeDaTarefa(nomeDaTarefa);
