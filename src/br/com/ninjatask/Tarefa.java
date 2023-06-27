@@ -10,7 +10,7 @@ public abstract class Tarefa implements PrioridadeDaTarefa{
     //
 
     public abstract void criarTarefa(String nomeDaTarefa);
-    public abstract String verTarefa(int idDaTarefa);
+    public abstract String verTarefa();
     public abstract void editarTarefa(int idDaTarefa);
     public abstract void deletarTarefa(int idDaTarefa);
 

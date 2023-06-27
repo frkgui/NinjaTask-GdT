@@ -1,5 +1,7 @@
 package br.com.ninjatask;
 
+import java.util.Scanner;
+
 public class TarefaComum extends Tarefa{
 
     @Override
@@ -19,13 +21,16 @@ public class TarefaComum extends Tarefa{
     }
 
     @Override
-    public String verTarefa(int idDaTarefa) {
-        return null;
+    public String verTarefa() {
+        return this.toString();
     }
 
     @Override
     public void editarTarefa(int idDaTarefa) {
-
+        Scanner input = new Scanner(System.in);
+        System.out.print("""
+                O que você deseja editar?
+                """);
     }
 
     @Override
