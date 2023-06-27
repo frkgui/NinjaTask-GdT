@@ -72,7 +72,7 @@ public abstract class Tarefa implements PrioridadeDaTarefa{
 
         return "Nome da tarefa: " + nomeDaTarefa + ", id: " + idDaTarefa +
                 "\nDescrição: " + descricaoDaTarefa +
-                "\nPrioridade da tarefa" + prioridadeString +
+                "\nPrioridade da tarefa: " + prioridadeString +
                 "\nStatus: " + statusDaTarefa;
     }
 }
