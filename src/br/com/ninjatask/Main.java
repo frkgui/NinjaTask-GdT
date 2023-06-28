@@ -29,11 +29,14 @@ public class Main {
         switch (opcaoSelecionada) {
             case 0 -> System.exit(0);
             case 1 -> {
+                int contadorDeTarefas = 1;
+
                 System.out.println("""
                                                 
                         >> Tipos de tarefa:
                                                 
                         >> (1) - Tarefa Comum
+                        >> (2) - Tarefa com data
                         """);
                 System.out.print(">> Digite o tipo de tarefa: ");
                 byte tipoSelecionado = Byte.parseByte(input.nextLine());
@@ -41,7 +44,7 @@ public class Main {
                     TarefaComum tarefaComum = new TarefaComum();
 
                     System.out.print("\n>> Digite o nome da tarefa: ");
-                    tarefaComum.setNomeDaTarefa(input.nextLine());
+                    String nomeDaTarefa =input.nextLine();
 
                     System.out.println("""
                             
@@ -52,14 +55,27 @@ public class Main {
                             (3) - Alta
                             """);
                     System.out.print("Escolha o nível de prioridade: ");
-                    tarefaComum.setPrioridadeDaTarefa(Byte.parseByte(input.nextLine()));
-
-                    tarefaComum.setStatusDaTarefa(StatusDaTarefa.PENDENTE);
+                    byte prioridadeDaTarefa = Byte.parseByte(input.nextLine());
 
                     System.out.println("\nDigite a descrição da tarefa: ");
-                    tarefaComum.setDescricaoDaTarefa(input.nextLine());
+                    String descricaoDaTarefa = input.nextLine();
+
+                    tarefaComum.criarTarefa(nomeDaTarefa,descricaoDaTarefa,prioridadeDaTarefa);
+
+                    tarefaComum.setStatusDaTarefa(StatusDaTarefa.PENDENTE);
+                    tarefaComum.setIdDaTarefa(contadorDeTarefas);
+                    contadorDeTarefas++;
+
 
                     System.out.println("\n"+tarefaComum.toString());
+                } else if (tipoSelecionado == 2) {
+                    TarefaComData tarefaComData = new TarefaComData();
+
+                    System.out.print("Digite o nome da tarefa: ");
+                    String nomeDaTarefa = input.nextLine();
+
+                    tarefaComData.criarTarefa(nomeDaTarefa);
+
                 }
                 break;
             }

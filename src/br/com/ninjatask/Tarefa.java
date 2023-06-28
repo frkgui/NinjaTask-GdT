@@ -6,7 +6,7 @@ public abstract class Tarefa implements PrioridadeDaTarefa{
     private int idDaTarefa;
     private byte prioridadeDaTarefa;
     private StatusDaTarefa statusDaTarefa;
-    private Integer contadorDeTarefas = 0;
+    private int contadorDeTarefas = 1;
 
     //
 
@@ -55,9 +55,12 @@ public abstract class Tarefa implements PrioridadeDaTarefa{
         this.statusDaTarefa = statusDaTarefa;
     }
 
-    public Integer getContadorDeTarefas() {
-        this.idDaTarefa += contadorDeTarefas;
-        return idDaTarefa;
+    public int getContadorDeTarefas() {
+        return contadorDeTarefas;
+    }
+
+    public void setContadorDeTarefas(int contadorDeTarefas) {
+        this.contadorDeTarefas = contadorDeTarefas;
     }
 
     @Override
